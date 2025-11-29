@@ -14,19 +14,22 @@ public class AccountTableService {
     CommonService commonService;
 
     private static final String USER_ACCOUNT ="user_account";
-    private static final String CREATE_ACCOUNT_DDL= """ 
+    private static final String CREATE_TABLE_DDL= """ 
             CREATE TABLE "user_account"(
                 "user_guid" VARCHAR(50) PRIMARY KEY,
                 "user_name" VARCHAR(50),
-                "email_id" VARCHAR(50) ,
-                "password" VARCHAR);
+                "email_id" VARCHAR(50) NOT NULL,
+                "user_id" INT NOT NULL,
+                "password" VARCHAR NOT NULL,
+                "created"  DATE NOT NULL,
+                last_updated TIMESTAMP);
             """;
     private static final String CREATE_INDEX_DDL = """
              CREATE INDEX account_index ON user_account (email_id);
            """;
 
     public void createAccountTable(Connection postgresConnection) throws Exception {
-        commonService.createTableIfNotExists(postgresConnection, USER_ACCOUNT,CREATE_ACCOUNT_DDL);
+        commonService.createTableIfNotExists(postgresConnection, USER_ACCOUNT,CREATE_TABLE_DDL);
         commonService.createIndexIfNotExists(postgresConnection,"account_index",USER_ACCOUNT,CREATE_INDEX_DDL);
     }
 
