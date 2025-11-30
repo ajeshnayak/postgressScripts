@@ -17,7 +17,7 @@ public class GroupUserTableService {
                 user_guid VARCHAR(50),
                 group_guid VARCHAR(50),
                 status VARCHAR(10),
-                created DATE,
+                created TIMESTAMP,
                 last_updated TIMESTAMP);
             """;
     private static final String CREATE_INDEX_DDL = """

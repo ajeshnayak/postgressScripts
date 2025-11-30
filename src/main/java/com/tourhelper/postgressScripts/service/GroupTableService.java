@@ -19,7 +19,7 @@ public class GroupTableService {
                 group_name VARCHAR(50),
                 owner VARCHAR(50),
                 status VARCHAR(10),
-                created DATE,
+                created TIMESTAMP,
                 last_updated TIMESTAMP);
             """;
     private static final String CREATE_INDEX_DDL = """

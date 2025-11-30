@@ -21,7 +21,7 @@ public class AccountTableService {
                 "email_id" VARCHAR(50) NOT NULL,
                 "user_id" INT NOT NULL,
                 "password" VARCHAR NOT NULL,
-                "created"  DATE NOT NULL,
+                "created"  TIMESTAMP NOT NULL,
                 last_updated TIMESTAMP);
             """;
     private static final String CREATE_INDEX_DDL = """

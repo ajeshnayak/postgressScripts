@@ -16,7 +16,7 @@ public class FriendTableService {
                 friend_entry_guid VARCHAR(50) PRIMARY KEY,
                 user_guid VARCHAR(50),
                 friend_guid VARCHAR(50),
-                created DATE,
+                created TIMESTAMP,
                 last_updated TIMESTAMP);
             """;
     private static final String CREATE_INDEX_DDL = """
